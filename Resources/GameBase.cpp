@@ -1,4 +1,4 @@
-#include "Header/GameBase.h"
+#include "GameBase.h"
 
 Process::Process()
 {

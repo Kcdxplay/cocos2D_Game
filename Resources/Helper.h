@@ -1,5 +1,6 @@
 #pragma once
 #include "GameBase.h"
+#include "SimpleAudioEngine.h"
 
 //================精灵动画相关=================//
 #define spriteFrameCache SpriteFrameCache::getInstance()
@@ -46,8 +47,6 @@ protected:
 
 private:
 	GloableEffect() { VOnInit(); }
-public:
-
 
 public:
 	static GloableEffect* Instance();	//单例模式
@@ -56,6 +55,8 @@ public:
 	list<EffectPlayer*>* Get_RemoveList() { return &m_effectRemoveList; }
 
 	Layer* Get_BasicLayer() { return &m_layer; }
+
+	void UpDate(float deltaMs) { VUpDate(deltaMs); };
 
 	//在指定位置播放动画
 	bool PlayEffectAt(EffectType effect, Vec2 pos, int repeatTimes=1);	
@@ -79,4 +80,28 @@ public:
 
 private:
 	void Finished() { gloableEffect->Get_RemoveList()->push_back(this); }
+};
+
+//================声音效果相关=================//
+#define audioInstance Audio::Instance()
+
+class Audio : public Process
+{
+public:
+private:
+	CocosDenshion::SimpleAudioEngine* m_pAudioEngine;
+	//这里大概是一个MAP  效果和声音对应的那种←w←
+
+public:
+	static Audio* Instance();
+
+	void playEffectSound(EffectType type);
+private:
+	Audio() { VOnInit(); }
+	~Audio() {}
+
+protected:
+	virtual void VOnInit();
+	virtual void VUpDate(unsigned long DeltaMs);
+	virtual void VOnAbort();
 };

@@ -1,4 +1,4 @@
-#include "Header/Helper.h"
+#include "Helper.h"
 
 void GloableEffect::VOnInit()
 {
@@ -66,6 +66,7 @@ bool GloableEffect::PlayEffectAt(EffectType effect, Vec2 pos, int repeatTimes)
 
 	//添加到特效层上
 	gloableEffect->Get_BasicLayer()->addChild(pEP->GetSprite());
+	audioInstance->playEffectSound(effect);
 
 	//丢到特效列表里面（好像不需要也）
 	//gloableEffect->Get_PlayList()->push_back(pEP);
@@ -81,3 +82,38 @@ void EffectPlayer::PlayThisAction(Repeat * action)
 	
 	m_sprite.runAction(m_sequence);
 }
+
+
+//================声音效果相关=================//
+Audio * Audio::Instance()
+{
+	static Audio instance;
+	return &instance;
+}
+
+void Audio::playEffectSound(EffectType type)
+{
+	switch (type)
+	{
+	case EFT_Explosion:
+		m_pAudioEngine->playEffect("Explosion_03.wav");
+		break;
+	default:
+		break;
+	}
+}
+
+void Audio::VOnInit()
+{
+	m_pAudioEngine = CocosDenshion::SimpleAudioEngine::getInstance();
+	m_pAudioEngine->preloadEffect("Explosion_03.wav");
+}
+
+void Audio::VUpDate(unsigned long DeltaMs)
+{
+}
+
+void Audio::VOnAbort()
+{
+}
+
