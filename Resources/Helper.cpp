@@ -65,7 +65,8 @@ bool GloableEffect::PlayEffectAt(EffectType effect, Vec2 pos, int repeatTimes)
 	pEP->PlayThisAction(action);
 
 	//添加到特效层上
-	gloableEffect->Get_BasicLayer()->addChild(pEP->GetSprite());
+	m_layer.addChild(pEP->GetSprite());
+	//播放对应音效
 	audioInstance->playEffectSound(effect);
 
 	//丢到特效列表里面（好像不需要也）
@@ -117,3 +118,29 @@ void Audio::VOnAbort()
 {
 }
 
+CharacterAnimationManager * CharacterAnimationManager::Instance()
+{
+	static CharacterAnimationManager instance;
+	return &instance;
+}
+
+Animation * CharacterAnimationManager::GetAnimation(BaseEffect* pBaseEffect)
+{
+	char str[100];
+	Vector<SpriteFrame*> animFrames;	//动画的"帧序列"
+
+	for (int i = 1; i <= pBaseEffect->m_columns; i++)
+	{
+		sprintf(str, pBaseEffect->m_name, i);
+		animFrames.pushBack(spriteFrameCache->getSpriteFrameByName(str));
+	}
+	if (animFrames.empty())
+		return false;
+
+	return Animation::createWithSpriteFrames(animFrames, pBaseEffect->m_delay);
+}
+
+void CharacterAnimationManager::Init()
+{
+	spriteFrameCache->addSpriteFramesWithFile("Megman.plist");
+}

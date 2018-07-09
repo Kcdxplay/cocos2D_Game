@@ -1,5 +1,6 @@
 #pragma once
 #include "GameBase.h"
+#include "Character.h"
 #include "SimpleAudioEngine.h"
 
 //================精灵动画相关=================//
@@ -17,9 +18,6 @@ enum EffectType
 struct BaseEffect
 {
 	char* m_name;	//读取用文件名及格式
-	Sequence m_effectRunner;	//动画
-	Sprite m_effectHolder;	//精灵
-
 	int m_columns;	//帧数
 	float m_delay;		//延时
 
@@ -27,6 +25,7 @@ struct BaseEffect
 	BaseEffect(char* name, int columns, float delay) :m_name(name), m_columns(columns), m_delay(delay) {}
 };
 
+//特效管理类
 class GloableEffect : public Process
 {
 
@@ -104,4 +103,28 @@ protected:
 	virtual void VOnInit();
 	virtual void VUpDate(unsigned long DeltaMs);
 	virtual void VOnAbort();
+};
+
+
+//================游戏角色相关=================//
+#define CAManager_Instance CharacterAnimationManager::Instance()
+
+class CharacterAnimationManager
+{
+public:
+	
+private:
+	Layer m_layer;
+public:
+	//单例模式
+	static CharacterAnimationManager* Instance();
+
+	Layer* Get_BasicLayer() { return &m_layer; }
+
+	Animation* GetAnimation(BaseEffect* pBaseEffect);
+
+private:
+	CharacterAnimationManager() { Init(); }
+
+	void Init();
 };

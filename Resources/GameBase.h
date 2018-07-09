@@ -84,9 +84,80 @@ public:
 
 	//大量接口
 
-	void SetPosition(Vec2* pos) { m_pos = *pos; m_sprite.setPosition(m_pos); }
+	void SetPosition(Vec2* pos) 
+	{
+		m_pos = *pos; m_sprite.setPosition(m_pos); 
+		m_sprite.setAnchorPoint(Vec2(0.5, 0.5));
+	}
 	void SetScale(float scaleNum) { m_scale[0] = m_scale[1] = scaleNum; }
 	void SetScale(float xScaleNum, float yScaleNum) { m_scale[0] = xScaleNum; m_scale[1] = yScaleNum; }
 
 	Sprite* GetSprite() { return &m_sprite; }
+};
+
+
+
+//状态类
+template<typename entity_type>
+class MotionState
+{
+public:
+	virtual void Enter(entity_type*) = 0;
+	virtual void Execute(entity_type*) = 0;
+	virtual void Exit(entity_type*) = 0;
+	
+	virtual ~MotionState() {}
+};
+
+//状态机
+template<typename entity_type>
+class MotionStateMachine
+{
+private:
+	entity_type* m_pOwner;
+
+	MotionState<entity_type>* m_pCurrentState;	//当前状态
+	MotionState<entity_type>* m_pPreviousState;	//前个状态
+	MotionState<entity_type>* m_pGlobaleState;	//全局状态
+
+public:
+	MotionStateMachine(entity_type* owner) :
+		m_pOwner(owner),
+		m_pCurrentState(NULL),
+		m_pPreviousState(NULL),
+		m_pGlobaleState(NULL)
+	{}
+
+	//初始化相关函数
+
+	void SetCurrentState(MotionState<entity_type>* state) { m_pCurrentState = state; }
+	void SetPreviousState(MotionState<entity_type>* state) { m_pPreviousState = state; }
+	void SetGlobalState(MotionState<entity_type>* state) { m_pGlobaleState = state; }
+
+	//每次更新调用
+	void Update() const 
+	{
+		if (m_pGlobaleState)	m_pGlobaleState->Execute(m_pOwner);
+		if (m_pCurrentState)	m_pCurrentState->Execute(m_pOwner);
+	}
+
+	//变更状态
+	void ChangeState(MotionState<entity_type>* pNewstate)
+	{
+		if (pNewstate)
+		{
+			m_pPreviousState = m_pCurrentState;
+			m_pCurrentState->Exit(m_pOwner);
+
+			m_pCurrentState = pNewstate;
+			m_pCurrentState->Enter(m_pOwner);
+		}
+	}
+
+	//变更状态为上一个状态
+	void RevertToPreviousState() { ChangeState(m_pPreviousState); }
+
+	MotionState<entity_type>* CurrentState() { return m_pCurrentState; }
+	MotionState<entity_type>* PreviousState() { return m_pPreviousState; }
+	MotionState<entity_type>* GlobalState() { return m_pGlobaleState; }
 };
