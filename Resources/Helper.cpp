@@ -1,4 +1,5 @@
 #include "Helper.h"
+#include "Player.h"
 
 void GloableEffect::VOnInit()
 {
@@ -143,4 +144,77 @@ Animation * CharacterAnimationManager::GetAnimation(BaseEffect* pBaseEffect)
 void CharacterAnimationManager::Init()
 {
 	spriteFrameCache->addSpriteFramesWithFile("Megman.plist");
+}
+
+CharacterManager * CharacterManager::Instance()
+{
+	static CharacterManager instance;
+	return &instance;
+}
+
+void CharacterManager::VOnInit()
+{
+}
+
+void CharacterManager::VUpDate(unsigned long deltaMs)
+{
+
+}
+
+Character * CharacterManager::AddPlayer(enum_characterType type)
+{
+	Character* pC = new Character(type);
+
+	m_enityList.push_back(pC);
+
+	PlayerController_Instance->ChangeCharacter(pC);
+
+	return pC;
+}
+
+void CharacterManager::AddCharacter(enum_characterType type)
+{
+	Character* pC = new Character(type);
+
+	m_enityList.push_back(pC);
+}
+
+void CharacterManager::RegistCharacter(Character * pCharacter)
+{
+	m_characterMap.insert(make_pair(pCharacter->Get_ID(), pCharacter));
+}
+
+//=======消息部分=======
+
+MessageDispatcher * MessageDispatcher::Instance()
+{
+	static MessageDispatcher instance;
+	return &instance;
+}
+
+//消息发送，需要再修改
+void MessageDispatcher::DispatchMessage(int sender, int receiver, int msg, double delay, void * ExtraInfo)
+{
+	Character* pReceiver = CharacterManaer_Instance->GetCharacterByID(receiver);
+
+	Telegram telegram(sender, receiver, msg, delay, ExtraInfo);
+	if (delay <= 0)
+	{
+		Dischare(pReceiver, telegram);
+	}
+	else
+	{
+		double currentTime = clock();
+		telegram.DispatchTime = currentTime + delay;
+
+		//m_msgPriority.insert(telegram);
+	}
+}
+
+void MessageDispatcher::VUpDate(unsigned long DeltaMs)
+{
+}
+
+void MessageDispatcher::Dischare(Character * pReciver, Telegram & msg)
+{
 }

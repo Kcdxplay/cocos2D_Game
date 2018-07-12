@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>Megman_IN (1).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{8,96}</string>
+                <key>spriteSourceSize</key>
+                <string>{8,96}</string>
+                <key>textureRect</key>
+                <string>{{243,204},{8,96}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>8 96 0 96 0 0 8 0</string>
+                <key>verticesUV</key>
+                <string>251 300 243 300 243 204 251 204</string>
+            </dict>
+            <key>Megman_IN (10).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{76,50}</string>
+                <key>spriteSourceSize</key>
+                <string>{76,50}</string>
+                <key>textureRect</key>
+                <string>{{82,386},{76,50}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 2 0 1 2 3 0</string>
+                <key>vertices</key>
+                <string>76 50 0 50 0 34 34 0 76 0</string>
+                <key>verticesUV</key>
+                <string>158 436 82 436 82 420 116 386 158 386</string>
+            </dict>
+            <key>Megman_IN (11).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{68,58}</string>
+                <key>spriteSourceSize</key>
+                <string>{68,58}</string>
+                <key>textureRect</key>
+                <string>{{1,401},{68,58}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 0 2 3 0 1 2</string>
+                <key>vertices</key>
+                <string>68 58 0 58 0 40 27 0 68 0</string>
+                <key>verticesUV</key>
+                <string>69 459 1 459 1 441 28 401 69 401</string>
+            </dict>
+            <key>Megman_IN (12).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{74,70}</string>
+                <key>spriteSourceSize</key>
+                <string>{74,70}</string>
+                <key>textureRect</key>
+                <string>{{1,329},{74,70}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 4 5 2 0 1 2 3 0 0 3 4</string>
+                <key>vertices</key>
+                <string>74 53 74 70 0 70 0 38 38 0 61 0</string>
+                <key>verticesUV</key>
+                <string>75 382 75 399 1 399 1 367 39 329 62 329</string>
+            </dict>
+            <key>Megman_IN (13).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{74,80}</string>
+                <key>spriteSourceSize</key>
+                <string>{74,80}</string>
+                <key>textureRect</key>
+                <string>{{1,167},{74,80}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 4 5 0 1 3 1 2 3 0 3 4</string>
+                <key>vertices</key>
+                <string>74 48 74 80 0 80 0 73 22 0 56 0</string>
+                <key>verticesUV</key>
+                <string>75 215 75 247 1 247 1 240 23 167 57 167</string>
+            </dict>
+            <key>Megman_IN (2).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,96}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,96}</string>
+                <key>textureRect</key>
+                <string>{{238,400},{16,96}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>16 96 0 96 0 0 16 0</string>
+                <key>verticesUV</key>
+                <string>254 496 238 496 238 400 254 400</string>
+            </dict>
+            <key>Megman_IN (3).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{20,96}</string>
+                <key>spriteSourceSize</key>
+                <string>{20,96}</string>
+                <key>textureRect</key>
+                <string>{{229,302},{20,96}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>20 96 0 96 0 0 20 0</string>
+                <key>verticesUV</key>
+                <string>249 398 229 398 229 302 249 302</string>
+            </dict>
+            <key>Megman_IN (4).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{32,86}</string>
+                <key>spriteSourceSize</key>
+                <string>{32,86}</string>
+                <key>textureRect</key>
+                <string>{{209,143},{32,86}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>5 6 7 0 5 7 0 1 4 2 3 4 1 2 4 0 4 5</string>
+                <key>vertices</key>
+                <string>32 36 32 86 8 86 1 79 0 71 0 36 12 0 20 0</string>
+                <key>verticesUV</key>
+                <string>241 179 241 229 217 229 210 222 209 214 209 179 221 143 229 143</string>
+            </dict>
+            <key>Megman_IN (5).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{64,64}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{160,334},{64,64}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>64 64 0 64 0 0 64 0</string>
+                <key>verticesUV</key>
+                <string>224 398 160 398 160 334 224 334</string>
+            </dict>
+            <key>Megman_IN (6).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{80,50}</string>
+                <key>spriteSourceSize</key>
+                <string>{80,50}</string>
+                <key>textureRect</key>
+                <string>{{78,334},{80,50}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 2 0 1 2 3 0</string>
+                <key>vertices</key>
+                <string>80 50 0 50 0 32 32 0 80 0</string>
+                <key>verticesUV</key>
+                <string>158 384 78 384 78 366 110 334 158 334</string>
+            </dict>
+            <key>Megman_IN (7).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{76,50}</string>
+                <key>spriteSourceSize</key>
+                <string>{76,50}</string>
+                <key>textureRect</key>
+                <string>{{138,452},{76,50}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 5 6 3 4 0 3 0 2 4 5 0 0 1 2</string>
+                <key>vertices</key>
+                <string>76 50 0 50 0 40 2 29 36 2 47 0 76 0</string>
+                <key>verticesUV</key>
+                <string>214 502 138 502 138 492 140 481 174 454 185 452 214 452</string>
+            </dict>
+            <key>Megman_IN (8).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{76,50}</string>
+                <key>spriteSourceSize</key>
+                <string>{76,50}</string>
+                <key>textureRect</key>
+                <string>{{60,438},{76,50}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 2 0 1 2 3 0</string>
+                <key>vertices</key>
+                <string>76 50 0 50 0 34 34 0 76 0</string>
+                <key>verticesUV</key>
+                <string>136 488 60 488 60 472 94 438 136 438</string>
+            </dict>
+            <key>Megman_IN (9).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{76,50}</string>
+                <key>spriteSourceSize</key>
+                <string>{76,50}</string>
+                <key>textureRect</key>
+                <string>{{160,400},{76,50}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 2 0 1 2 3 0</string>
+                <key>vertices</key>
+                <string>76 50 0 50 0 34 34 0 76 0</string>
+                <key>verticesUV</key>
+                <string>236 450 160 450 160 434 194 400 236 400</string>
+            </dict>
+            <key>Megman_Running (1).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{72,80}</string>
+                <key>spriteSourceSize</key>
+                <string>{72,80}</string>
+                <key>textureRect</key>
+                <string>{{77,81},{72,80}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 4 5 0 1 3 1 2 3 0 3 4</string>
+                <key>vertices</key>
+                <string>72 42 72 80 0 80 0 73 22 0 56 0</string>
+                <key>verticesUV</key>
+                <string>149 123 149 161 77 161 77 154 99 81 133 81</string>
+            </dict>
+            <key>Megman_Running (10).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{84,80}</string>
+                <key>spriteSourceSize</key>
+                <string>{84,80}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{84,80}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 8 9 3 7 8 5 6 3 5 3 4 6 7 3 1 2 3 1 3 8 0 1 9</string>
+                <key>vertices</key>
+                <string>84 20 84 30 75 80 43 80 2 60 0 55 0 32 27 3 43 0 58 0</string>
+                <key>verticesUV</key>
+                <string>85 21 85 31 76 81 44 81 3 61 1 56 1 33 28 4 44 1 59 1</string>
+            </dict>
+            <key>Megman_Running (11).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{76,80}</string>
+                <key>spriteSourceSize</key>
+                <string>{76,80}</string>
+                <key>textureRect</key>
+                <string>{{168,1},{76,80}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 4 5 3 1 2 3 4 1 0 1 4</string>
+                <key>vertices</key>
+                <string>76 80 35 80 0 67 0 36 36 0 76 0</string>
+                <key>verticesUV</key>
+                <string>244 81 203 81 168 68 168 37 204 1 244 1</string>
+            </dict>
+            <key>Megman_Running (12).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{58,82}</string>
+                <key>spriteSourceSize</key>
+                <string>{58,82}</string>
+                <key>textureRect</key>
+                <string>{{145,165},{58,82}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 0 2 3 0 1 2</string>
+                <key>vertices</key>
+                <string>58 82 0 82 0 57 28 0 58 0</string>
+                <key>verticesUV</key>
+                <string>203 247 145 247 145 222 173 165 203 165</string>
+            </dict>
+            <key>Megman_Running (2).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{60,80}</string>
+                <key>spriteSourceSize</key>
+                <string>{60,80}</string>
+                <key>textureRect</key>
+                <string>{{151,83},{60,80}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 0 2 3 0 1 2</string>
+                <key>vertices</key>
+                <string>60 80 0 80 0 63 26 0 60 0</string>
+                <key>verticesUV</key>
+                <string>211 163 151 163 151 146 177 83 211 83</string>
+            </dict>
+            <key>Megman_Running (3).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{54,83}</string>
+                <key>spriteSourceSize</key>
+                <string>{54,83}</string>
+                <key>textureRect</key>
+                <string>{{135,249},{54,83}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 4 5 0 3 4 1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>54 52 27 83 0 83 0 54 27 0 54 0</string>
+                <key>verticesUV</key>
+                <string>189 301 162 332 135 332 135 303 162 249 189 249</string>
+            </dict>
+            <key>Megman_Running (4).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{66,82}</string>
+                <key>spriteSourceSize</key>
+                <string>{66,82}</string>
+                <key>textureRect</key>
+                <string>{{77,163},{66,82}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 0 2 3 0 1 2</string>
+                <key>vertices</key>
+                <string>66 82 0 82 0 36 36 0 66 0</string>
+                <key>verticesUV</key>
+                <string>143 245 77 245 77 199 113 163 143 163</string>
+            </dict>
+            <key>Megman_Running (5).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{80,78}</string>
+                <key>spriteSourceSize</key>
+                <string>{80,78}</string>
+                <key>textureRect</key>
+                <string>{{86,1},{80,78}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 5 6 2 4 5 2 3 4 0 1 2 0 2 5</string>
+                <key>vertices</key>
+                <string>80 22 80 78 41 78 0 59 0 36 36 0 58 0</string>
+                <key>verticesUV</key>
+                <string>166 23 166 79 127 79 86 60 86 37 122 1 144 1</string>
+            </dict>
+            <key>Megman_Running (6).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{74,78}</string>
+                <key>spriteSourceSize</key>
+                <string>{74,78}</string>
+                <key>textureRect</key>
+                <string>{{1,249},{74,78}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 6 2 5 6 2 3 4 2 4 5 0 1 6 0 6 7</string>
+                <key>vertices</key>
+                <string>74 20 74 42 58 61 71 78 0 78 0 36 36 0 54 0</string>
+                <key>verticesUV</key>
+                <string>75 269 75 291 59 310 72 327 1 327 1 285 37 249 55 249</string>
+            </dict>
+            <key>Megman_Running (7).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{58,80}</string>
+                <key>spriteSourceSize</key>
+                <string>{58,80}</string>
+                <key>textureRect</key>
+                <string>{{75,247},{58,80}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 5 6 3 5 0 3 4 5 2 0 1 2 3 0</string>
+                <key>vertices</key>
+                <string>58 80 0 80 0 57 1 53 28 1 35 0 58 0</string>
+                <key>verticesUV</key>
+                <string>133 327 75 327 75 304 76 300 103 248 110 247 133 247</string>
+            </dict>
+            <key>Megman_Running (8).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{50,81}</string>
+                <key>spriteSourceSize</key>
+                <string>{50,81}</string>
+                <key>textureRect</key>
+                <string>{{191,231},{50,81}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>5 6 7 0 5 7 0 4 5 1 4 0 1 2 3 1 3 4</string>
+                <key>vertices</key>
+                <string>50 49 27 81 1 81 0 72 0 46 21 4 25 0 50 0</string>
+                <key>verticesUV</key>
+                <string>241 280 218 312 192 312 191 303 191 277 212 235 216 231 241 231</string>
+            </dict>
+            <key>Megman_Running (9).png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{74,82}</string>
+                <key>spriteSourceSize</key>
+                <string>{74,82}</string>
+                <key>textureRect</key>
+                <string>{{1,83},{74,82}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 4 5 0 1 3 1 2 3 0 3 4</string>
+                <key>vertices</key>
+                <string>74 33 74 82 0 82 0 36 36 0 58 0</string>
+                <key>verticesUV</key>
+                <string>75 116 75 165 1 165 1 119 37 83 59 83</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>Megman.png</string>
+            <key>size</key>
+            <string>{255,503}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:197250347fe8afc5697198afd83f873d:3ef7795ab8a04d2c2a2d71e5ef9f2730:87a82cc4969fa4c70d0e539c478b7076$</string>
+            <key>textureFileName</key>
+            <string>Megman.png</string>
+        </dict>
+    </dict>
+</plist>

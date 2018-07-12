@@ -7,6 +7,8 @@
 #include "Character.h"
 #include "CharacterType.h"
 
+#include "Player.h"
+
 USING_NS_CC;
 
 Scene* GraphicTesting::createScene()
@@ -28,12 +30,13 @@ bool GraphicTesting::init()
 	this->addChild(CAManager_Instance->Get_BasicLayer());
 	inputInstance;
 
+
 	/*gloableEffect->PlayEffectAt(EFT_Explosion, Vec2(0, 0), 3);
 	gloableEffect->PlayEffectAt(EFT_Explosion, Vec2(400, 300), 3);
 	gloableEffect->PlayEffectAt(EFT_Explosion, Vec2(200, 200), 3);
 	gloableEffect->PlayEffectAt(EFT_Explosion, Vec2(400, 200), 4);*/
 	
-	static Character player(enum_charcterType::CharcterType_Default);
+	CharacterManaer_Instance->AddPlayer(enum_characterType::CharcterType_Default);
 
 	//this->addChild(player.Get_Sprite());
 
@@ -57,6 +60,7 @@ bool GraphicTesting::init()
 void GraphicTesting::update(float deltaMs)
 {
 	gloableEffect->UpDate(deltaMs);
+	PlayerController_Instance->VUpDate(deltaMs);
 }
 
 cocos2d::Vector<SpriteFrame*> GraphicTesting::getAnimation(const char * format, int count)

@@ -108,6 +108,7 @@ protected:
 
 //================游戏角色相关=================//
 #define CAManager_Instance CharacterAnimationManager::Instance()
+#define CharacterManaer_Instance CharacterManager::Instance()
 
 class CharacterAnimationManager
 {
@@ -128,3 +129,72 @@ private:
 
 	void Init();
 };
+
+//管理实体
+class CharacterManager : public Process
+{
+public:
+private:
+	list<Character*> m_enityList;
+	map<int, Character*> m_characterMap;
+
+public:
+	static CharacterManager* Instance();
+
+	//进程的对于状态函数
+
+	virtual void VOnInit();
+	virtual void VUpDate(unsigned long deltaMs);
+	virtual void VOnFail() {}
+	virtual void VOnAbort() {}
+
+	//接口与功能
+
+	//增加一个玩家	会顶替之前的角色
+	Character* AddPlayer(enum_characterType type);
+	//增加一个敌人
+	void AddEnemy(enum_characterType type);
+	//增加一个角色
+	void AddCharacter(enum_characterType type);
+
+	Character* GetCharacterByID(int ID) { return m_characterMap[ID]; }
+	//注册角色至消息处理图
+	void RegistCharacter(Character* pCharacter);
+
+private:
+	CharacterManager() { VOnInit(); }
+};
+
+//================游戏AI相关=================//
+
+//消息类型
+enum enum_MsgType
+{
+	//控制部分
+	ConMSG_StopedWalking,
+
+};
+
+class MessageDispatcher : public Process
+{
+public:
+	set<Telegram> m_msgPriority;
+
+private:
+
+public:
+	//单例模式
+	static MessageDispatcher* Instance();
+	//需要发送消息时调用此函数
+	void DispatchMessage(int sender, int receiver, int msg, double delay = 0, void* ExtraInfo = NULL);
+
+	virtual void VUpDate(unsigned long DeltaMs);
+
+private:
+	MessageDispatcher() {}
+	~MessageDispatcher() {}
+
+	//调用对应对象的消息处理函数  类型需要再修改
+	void Dischare(Character* pReciver, Telegram& msg);
+};
+

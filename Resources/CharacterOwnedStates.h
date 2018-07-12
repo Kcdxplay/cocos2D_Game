@@ -12,13 +12,28 @@ public:
 	virtual void Enter(Character* pCharacter);
 	virtual void Execute(Character* pCharacter);
 	virtual void Exit(Character* pCharacter);
+
+	virtual bool OnMessage(Character* pCharacter, const Telegram& msg);
 private:
 	CMotionState_Respawn() {}
 	~CMotionState_Respawn() {}
 };
 
+//Õ¾Á¢×´Ì¬
+class CMotionState_Stand : public MotionState<Character>
+{
+public:
+	static CMotionState_Stand* Instance();
+
+	virtual void Enter(Character* pCharacter);
+	virtual void Execute(Character* pCharacter);
+	virtual void Exit(Character* pCharacter);
+
+	virtual bool OnMessage(Character* pCharacter, const Telegram& msg);
+};
+
 //ÐÐ×ß×´Ì¬
-class CMotionState_Walk :public MotionState<Character>
+class CMotionState_Walk : public MotionState<Character>
 {
 public:
 	static CMotionState_Walk* Instance();
@@ -26,6 +41,8 @@ public:
 	virtual void Enter(Character* pCharacter);
 	virtual void Execute(Character* pCharacter);
 	virtual void Exit(Character* pCharacter);
+
+	virtual bool OnMessage(Character* pCharacter, const Telegram& msg);
 private:
 	CMotionState_Walk() {}
 	~CMotionState_Walk() {}

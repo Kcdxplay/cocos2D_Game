@@ -8,7 +8,7 @@
 class InputHelper : public Process
 {
 public:
-	enum class KeyCode
+	enum KeyCode
 	{
 		KEY_NONE,
 		KEY_PAUSE,
@@ -192,8 +192,8 @@ private:
 public:
 	static InputHelper* Instance();
 
-	void* GetMouse() { return &m_mouse; }
-	void* GetKeys() { return &m_keys; }
+	bool* GetMouse() { return m_mouse; }
+	bool* GetKeys() { return m_keys; }
 
 protected:
 	//工作函数
@@ -212,5 +212,6 @@ private:
 	void MouseMove();
 	
 	//键盘部分
-	void KeyDown(cocos2d::Event* event);
+	void KeyDown(EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+	void KeyRelease(EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
 };

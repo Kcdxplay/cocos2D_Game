@@ -18,13 +18,14 @@ void CT_Default::Init()
 	BaseEffect* pBE;
 
 	//重生动画
-	pBE = new BaseEffect("Megman_IN (%1d).png", 13, 0.05f);
+	pBE = new BaseEffect("Megman_IN (%1d).png", 13, 0.07f);
 	m_baseEffectMap.insert(make_pair(Respawn, pBE));
 	//行走动画
-	pBE = new BaseEffect("Megman_Running (%1d).png", 12, 0.05f);
+	pBE = new BaseEffect("Megman_Running (%1d).png", 12, 0.07f);
 	m_baseEffectMap.insert(make_pair(Walk, pBE));
 }
 
+//给角色配置动画的函数
 void CT_Default::GetSequence(Character * character, int animationType)
 {
 	auto animation = CAManager_Instance->GetAnimation(m_baseEffectMap[animationType]);
@@ -37,7 +38,7 @@ void CT_Default::GetSequence(Character * character, int animationType)
 
 		auto callFunc = CallFunc::create([character]()
 		{
-			character->Get_MotionStateMachine()->ChangeState(CMotionState_Walk::Instance());
+			character->Get_MotionStateMachine()->ChangeState(CMotionState_Stand::Instance());
 		});
 
 		character->Set_Sequence(Sequence::create(

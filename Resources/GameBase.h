@@ -95,7 +95,23 @@ public:
 	Sprite* GetSprite() { return &m_sprite; }
 };
 
+//消息结构体
+struct Telegram
+{
+	int Sender;
+	int Receiver;
+	int Msg;
+	double DispatchTime;
+	void* ExtraInfo;
 
+	Telegram(int sender, int receiver, int msg, double dispatchTime = 0, void* extraInfo = NULL) :
+		Sender(sender),
+		Receiver(receiver),
+		Msg(msg),
+		DispatchTime(dispatchTime),
+		ExtraInfo(extraInfo)
+	{}
+};
 
 //状态类
 template<typename entity_type>
@@ -105,6 +121,8 @@ public:
 	virtual void Enter(entity_type*) = 0;
 	virtual void Execute(entity_type*) = 0;
 	virtual void Exit(entity_type*) = 0;
+
+	virtual bool OnMessage(entity_type*, const Telegram&) = 0;
 	
 	virtual ~MotionState() {}
 };
@@ -141,6 +159,9 @@ public:
 		if (m_pCurrentState)	m_pCurrentState->Execute(m_pOwner);
 	}
 
+	//消息处理
+	bool HandleMessage(const Telegram& msg);
+
 	//变更状态
 	void ChangeState(MotionState<entity_type>* pNewstate)
 	{
@@ -161,3 +182,34 @@ public:
 	MotionState<entity_type>* PreviousState() { return m_pPreviousState; }
 	MotionState<entity_type>* GlobalState() { return m_pGlobaleState; }
 };
+
+
+//角色控制类
+template <typename entity_type>
+class GameEntityController
+{
+public:
+
+protected:
+	entity_type* m_pEntity;
+
+public:
+	GameEntityController() :m_pEntity(NULL) {}
+	GameEntityController(entity_type* entity) :m_pEntity(entity) {}
+
+	void SET_Entity(entity_type* entity) { m_pEntity = entity; }
+	entity_type* GET_Entity() { return m_pEntity; }
+private:
+};
+
+template<typename entity_type>
+inline bool MotionStateMachine<entity_type>::HandleMessage(const Telegram & msg)
+{
+	if (m_pCurrentState->OnMessage(m_pOwner, msg))
+		return true;
+
+	if (m_pGlobaleState->OnMessage(m_pOwner, msg))
+		return true;
+
+	return false;
+}

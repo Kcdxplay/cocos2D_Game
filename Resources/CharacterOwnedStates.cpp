@@ -28,6 +28,38 @@ void CMotionState_Respawn::Exit(Character * pCharacter)
 	//pCharacter->Get_Sequence()->autorelease();
 }
 
+bool CMotionState_Respawn::OnMessage(Character * pCharacter, const Telegram & msg)
+{
+	return false;
+}
+
+
+//=======战立状态相关=======
+CMotionState_Stand * CMotionState_Stand::Instance()
+{
+	static CMotionState_Stand instance;
+	return &instance;
+}
+
+void CMotionState_Stand::Enter(Character * pCharacter)
+{
+	pCharacter->Get_CharacterType()->GetSequence(pCharacter, 0);
+
+	pCharacter->RunAnimation();
+}
+
+void CMotionState_Stand::Execute(Character * pCharacter)
+{
+}
+
+void CMotionState_Stand::Exit(Character * pCharacter)
+{
+}
+
+bool CMotionState_Stand::OnMessage(Character * pCharacter, const Telegram & msg)
+{
+	return false;
+}
 
 //=======行走状态相关=======
 CMotionState_Walk * CMotionState_Walk::Instance()
@@ -51,6 +83,11 @@ void CMotionState_Walk::Execute(Character * pCharacter)
 
 void CMotionState_Walk::Exit(Character * pCharacter)
 {
+}
+
+bool CMotionState_Walk::OnMessage(Character * pCharacter, const Telegram & msg)
+{
+	return false;
 }
 
 

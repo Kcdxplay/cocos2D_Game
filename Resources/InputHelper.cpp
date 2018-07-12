@@ -15,13 +15,15 @@ void InputHelper::VOnInit()
 	m_KeyboardListener = EventListenerKeyboard::create();
 
 	m_MouseListener->onMouseDown = std::bind(&InputHelper::MouseDown, this, std::placeholders::_1);
-	//m_KeyboardListener->onKeyPressed = std::bind(&InputHelper::KeyDown, this, std::placeholders::_1);
+	
+	m_KeyboardListener->onKeyPressed = std::bind(&InputHelper::KeyDown, this, std::placeholders::_1, std::placeholders::_2);
+	m_KeyboardListener->onKeyReleased = std::bind(&InputHelper::KeyRelease, this, std::placeholders::_1, std::placeholders::_2);
 
 	//¿ªÊ¼¼àÌý
 
 	auto _eventlistener = Director::getInstance()->getEventDispatcher();
 	_eventlistener->addEventListenerWithFixedPriority(m_MouseListener, 1);
-	//_eventlistener->addEventListenerWithFixedPriority(m_KeyboardListener,1);
+	_eventlistener->addEventListenerWithFixedPriority(m_KeyboardListener,1);
 }
 
 void InputHelper::VUpDate(unsigned long deltaMs)
@@ -42,6 +44,16 @@ void InputHelper::MouseDown(cocos2d::Event * event)
 	gloableEffect->PlayEffectAt(EFT_Explosion, pos);
 }
 
-void InputHelper::KeyDown(cocos2d::Event * event)
+void InputHelper::KeyDown(EventKeyboard::KeyCode keyCode, cocos2d::Event * event)
 {
+	m_keys[(int)keyCode] = true;
+
+	log("pressing");
+}
+
+void InputHelper::KeyRelease(EventKeyboard::KeyCode keyCode, cocos2d::Event * event)
+{
+	m_keys[(int)keyCode] = false;
+
+	log("released");
 }
